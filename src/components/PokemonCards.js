@@ -5,6 +5,7 @@ import './PokemonCards.css';
 
 function PokemonCards(props){
     const [pokemonData, setPokemonData] = useState({
+        id: 0,
         image_url: '',
     });
 
@@ -19,6 +20,22 @@ function PokemonCards(props){
             });
     }, [])
 
+    function correctId(id){
+        let curr_id = id;
+        let count = 0;
+
+        while(curr_id !== 0){
+            count += 1;
+            curr_id = Math.floor(curr_id/10);
+        }
+
+        const totalZeros = 3 - count;
+        const result = "0".repeat(totalZeros) + id;
+
+        console.log(result);
+        return result;
+    }
+
     return(
         <div className = 'cardContainer m-3 p-2'>
             <div className = 'card flex flex-col'>
@@ -28,7 +45,7 @@ function PokemonCards(props){
 
                 <div className = 'card__description'>
                     <div className = 'card__subtitle px-3'>
-                        { "#" + pokemonData.id }
+                        { "#" + correctId(pokemonData.id) }
                     </div>
                     <div className = 'card__title p-3'>
                         { props.name.toUpperCase() }
