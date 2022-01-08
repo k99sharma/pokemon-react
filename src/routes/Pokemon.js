@@ -1,6 +1,8 @@
+import PokemonCardsList from "../components/PokemonCardsList";
+
 function Pokemon(){
     return(
-        <h1>Pokemon</h1>
+        <PokemonCardsList />
     );
 }
 

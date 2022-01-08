@@ -1,0 +1,14 @@
+.card__image{
+    background-color: #Ecf3f9;
+}
+
+.card__subtitle{
+    color: #A2B29F;
+    font-weight: 600;
+}
+
+.card__title{
+    color:  #282C35;
+    font-size: 1rem;
+    font-weight: 700;
+}
