@@ -1,8 +1,13 @@
+// importing Components
 import PokemonCardsList from "../components/PokemonCardsList";
+import GoToTop from "../components/TopButton";
 
 function Pokemon(){
     return(
-        <PokemonCardsList />
+        <>
+            <GoToTop />
+            <PokemonCardsList />
+        </>    
     );
 }
 

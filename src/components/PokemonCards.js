@@ -41,7 +41,7 @@ function PokemonCards(props){
             <Link to={`/pokemon/${props.name}`}>
                 <div className = 'card rounded-md flex flex-col'>
                     <div className = 'card__image flex items-center justify-center'>
-                        <img width="200px" height="200px" src = {pokemonData.image_url} alt = {props.name + 'image'} />
+                        <img width="200px" height="200px" src = {pokemonData.image_url} alt = {props.name} />
                     </div>
 
                     <div className = 'card__description'>

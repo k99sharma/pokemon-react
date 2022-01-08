@@ -1,7 +1,7 @@
 function Spinner(){
     return(
-        <div class="flex justify-center items-center">
-            <div class="animate-spin" role="status">
+        <div className="flex justify-center items-center">
+            <div className="animate-spin" role="status">
                 <img className = 'h-8 w-8' src = '/spinner.png' alt = 'spinner' />
             </div>
         </div>
