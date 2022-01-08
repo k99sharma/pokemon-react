@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-
+import { Link } from 'react-router-dom';
 import './PokemonCards.css';
 
 
@@ -20,6 +20,7 @@ function PokemonCards(props){
             });
     }, [])
 
+    // function to find correct id with correct prefix zeros
     function correctId(id){
         let curr_id = id;
         let count = 0;
@@ -32,26 +33,27 @@ function PokemonCards(props){
         const totalZeros = 3 - count;
         const result = "0".repeat(totalZeros) + id;
 
-        console.log(result);
         return result;
     }
 
     return(
         <div className = 'cardContainer m-3 p-2'>
-            <div className = 'card flex flex-col'>
-                <div className = 'card__image flex items-center justify-center'>
-                    <img width="200px" height="200px" src = {pokemonData.image_url} alt = {props.name + 'image'} />
-                </div>
+            <Link to={`/pokemon/${props.name}`}>
+                <div className = 'card rounded-md flex flex-col'>
+                    <div className = 'card__image flex items-center justify-center'>
+                        <img width="200px" height="200px" src = {pokemonData.image_url} alt = {props.name + 'image'} />
+                    </div>
 
-                <div className = 'card__description'>
-                    <div className = 'card__subtitle px-3'>
-                        { "#" + correctId(pokemonData.id) }
-                    </div>
-                    <div className = 'card__title p-3'>
-                        { props.name.toUpperCase() }
-                    </div>
-                </div>      
-            </div>
+                    <div className = 'card__description'>
+                        <div className = 'card__subtitle px-3'>
+                            { "#" + correctId(pokemonData.id) }
+                        </div>
+                        <div className = 'card__title p-3'>
+                            { props.name.toUpperCase() }
+                        </div>
+                    </div>      
+                </div>
+            </Link> 
         </div>
     );
 }

@@ -1,16 +1,19 @@
 import { useEffect, useState } from 'react';
 import './PokemonCardsList.css';
 
+// importing components
 import PokemonCards from './PokemonCards';
+import LoadingButton from './LoadingButton';
 
 
 function PokemonCardsList(){
     const [pokemonCount, setPokemonCount] = useState(12);
     const [pokemonList, setPokemonList] = useState([]);
+    const [isLoading, setIsLoding] = useState(false);
 
     useEffect(()=>{
         fetchPokemons();
-    }, []);
+    }, [pokemonCount]);
 
     // function to fetch data from API
     const fetchPokemons = async () => {
@@ -32,14 +35,28 @@ function PokemonCardsList(){
 
         return list;
     }
+
+    // function to load more pokemons
+    function loadMorePokemons(){
+        setIsLoding(true);
+        setTimeout(()=>{
+            setPokemonCount(pokemonCount + 12);
+            setIsLoding(false);
+            console.log(pokemonCount);
+        }, 1500)
+    }
     
 
     return(
-        <div className = 'flex items-center justify-center my-5'>
+        <div className = 'flex flex-col items-center justify-center my-5'>
             <div className='pokemonCardsList rounded-md grid grid-cols-1 md:grid-cols-3'>
                 { 
                     cardsList()
                 }
+            </div>
+
+            <div className = 'pokemonCardList__button my-5'>
+                <LoadingButton loadMore = {loadMorePokemons} loading = {isLoading} />
             </div>
         </div>       
     );

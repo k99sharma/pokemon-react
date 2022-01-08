@@ -2,14 +2,13 @@ import './App.css';
 import {
   BrowserRouter,
   Routes,
-  Route
+  Route,
 } from 'react-router-dom';
 
 // importing components
 import Navbar from './components/Navbar';
 import Home from './routes/Home';
 import Pokemon from './routes/Pokemon';
-
 
 function App() {
   return (
