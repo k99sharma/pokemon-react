@@ -1,13 +1,15 @@
 import { useEffect, useState } from 'react';
 import './PokemonCardsList.css';
 
+import config_values from '../utilities/config';
+
 // importing components
 import PokemonCards from './PokemonCards';
 import LoadingButton from './LoadingButton';
 
 
 function PokemonCardsList(){
-    const [pokemonCount, setPokemonCount] = useState(12);
+    const [pokemonCount, setPokemonCount] = useState(config_values.POKEMON_COUNT);
     const [pokemonList, setPokemonList] = useState([]);
     const [isLoading, setIsLoding] = useState(false);
 
@@ -36,14 +38,16 @@ function PokemonCardsList(){
         return list;
     }
 
+    // function to increase pokemon count
+    function increasePokemonCount(){
+        setPokemonCount(pokemonCount + config_values.POKEMON_COUNT);
+        setIsLoding(false);
+    }
+
     // function to load more pokemons
     function loadMorePokemons(){
         setIsLoding(true);
-        setTimeout(()=>{
-            setPokemonCount(pokemonCount + 12);
-            setIsLoding(false);
-            console.log(pokemonCount);
-        }, 1500)
+        setTimeout(increasePokemonCount, config_values.TIMEOUT_INTERVAL)
     }
     
 
