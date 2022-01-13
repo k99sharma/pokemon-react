@@ -1,0 +1,16 @@
+.optionsBar{
+    background-color: white;
+    width: 80vw;
+    height: 6vh;
+}
+
+.searchBar{
+    height: 100%;
+    width: 70%;
+}
+
+.filter{
+    height: 100%;
+    width: 30%;
+    background-color: red;
+}

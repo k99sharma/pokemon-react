@@ -38,7 +38,7 @@ function PokemonCards(props){
 
     return(
         <div className = 'cardContainer m-3 p-2'>
-            <Link to={`/pokemon/${props.name}`}>
+            <Link to='#'>
                 <div className = 'card rounded-md flex flex-col'>
                     <div className = 'card__image flex items-center justify-center'>
                         <img width="200px" height="200px" src = {pokemonData.image_url} alt = {props.name} />
