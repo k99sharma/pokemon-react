@@ -1,0 +1,22 @@
+.header{
+    background-color: white;
+    width: 80vw;
+}
+
+.searchBar{
+    width: 70%;
+}
+
+.searchBar__input{
+    width: 100%;
+    border: 1.5px solid grey;
+}
+
+.searchBar__input:focus{
+    border: 1.5px solid #072227;
+}
+
+.filter{
+    background-color: red;
+    width: 20%;
+}

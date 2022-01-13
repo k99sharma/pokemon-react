@@ -1,14 +1,16 @@
 // importing Components
 import PokemonCardsList from "../components/PokemonCardsList";
-import OptionsBar from "../components/OptionsBar";
+// import OptionsBar from "../components/OptionsBar";
 import GoToTop from "../components/TopButton";
+import PokemonHeader from "../components/PokemonHeader";
 
 function Pokemon(){
     return(
         <>
             <GoToTop />
-            <OptionsBar />
-            <PokemonCardsList />
+            <PokemonHeader />
+            {/* <OptionsBar /> */}
+            {/* <PokemonCardsList /> */}
         </>    
     );
 }
