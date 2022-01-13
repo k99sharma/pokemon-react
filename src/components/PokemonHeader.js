@@ -4,8 +4,12 @@ import { useState } from 'react';
 
 function Filter(){
     return(
-        <div className = 'filter'>
-            filter
+        <div className = 'filter flex justify-center align-center'>
+            <select className = 'filter__select p-2 rounded-md'>
+                <option className = 'filter__select__option' value = 'Filter'>Filter</option>
+                <option className = 'filter__select__option' value = 'filer 2'>Filter 2</option>
+                <option className = 'filter__select__option' value = 'filter 3'>Filter 3</option>
+            </select>
         </div>
     )
 }
@@ -21,7 +25,7 @@ function SearchBar(){
     }
 
     return(
-        <div className = 'searchBar'>
+        <div className = 'searchBar shadow-md'>
             <input 
                 className = 'searchBar__input p-2 rounded-md' 
                 type = 'text' 
@@ -36,7 +40,7 @@ function SearchBar(){
 
 function Menu(){
     return(
-        <div className = 'flex items-center justify-around p-3'>
+        <div className = 'flex items-center justify-evenly p-3'>
             <SearchBar />
             <Filter />
         </div>
@@ -46,7 +50,7 @@ function Menu(){
 function PokemonHeader(){
     return(
         <div className = 'flex justify-center items-center my-4'>
-            <div className = 'header p-3 rounded-md shadow-lg'>
+            <div className = 'header p-4 rounded-md shadow-lg'>
                 <img className = 'mb-5' width = '30%' src = '/pokemonLogo.svg' alt = '' />
 
                 <Menu />

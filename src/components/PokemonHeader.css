@@ -9,14 +9,28 @@
 
 .searchBar__input{
     width: 100%;
-    border: 1.5px solid grey;
+    border: 1.5px solid #dbd7d2;
+    background-color: #dbd7d2;
+    color: #2C3539;
 }
 
-.searchBar__input:focus{
+.searchBar__input:hover, .searchBar__input:focus{
+    background-color: white;
     border: 1.5px solid #072227;
 }
 
 .filter{
-    background-color: red;
-    width: 20%;
+    width: 30%;
+}
+
+.filter__select{
+    border: 1px solid #dbd7d2;
+}
+
+.filter__select:hover, .filter__select:focus{
+    border: 1.5px solid #072227;
+}
+
+.filter__select__option{
+    width: 500px;
 }
