@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import './PokemonCardsList.css';
 
 import config_values from '../utilities/config';
+import { fetchPokemonsList } from '../utilities/functions';
 
 // importing components
 import PokemonCards from './PokemonCards';
@@ -14,16 +15,8 @@ function PokemonCardsList(){
     const [isLoading, setIsLoding] = useState(false);
 
     useEffect(()=>{
-        fetchPokemons();
+        fetchPokemonsList(config_values.POKEMON_API, pokemonCount, setPokemonList);
     }, [pokemonCount]);
-
-    // function to fetch data from API
-    const fetchPokemons = async () => {
-        const pokemon_api = `https://pokeapi.co/api/v2/pokemon`;
-        await fetch(`${pokemon_api}?limit=${pokemonCount}`)
-            .then(res => res.json())
-            .then(data => setPokemonList(data.results));
-    }
 
     // function to create pokemoncards component list
     function cardsList(){

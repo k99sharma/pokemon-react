@@ -6,10 +6,18 @@
     width: 100%;
     border: 1.5px solid #dbd7d2;
     background-color: #dbd7d2;
-    color: #2C3539;
+    color: #36454f;
 }
 
 .searchBar__input:hover, .searchBar__input:focus{
     background-color: white;
+    border: 1.5px solid #072227;
+}
+
+.searchButton{
+    border: 1.5px solid #dbd7d2;
+}
+
+.searchButton:focus, .searchButton:hover{
     border: 1.5px solid #072227;
 }

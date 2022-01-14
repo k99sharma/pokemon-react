@@ -15,3 +15,10 @@ module.exports.correctId = (id)=>{
 
         return result;
 }
+
+// function to fetch pokemons with limit
+module.exports.fetchPokemonsList=(API, count, setState)=>{
+    fetch(`${API}/?limit=${count}`)
+        .then(res => res.json())
+        .then(data => setState(data.results))
+}

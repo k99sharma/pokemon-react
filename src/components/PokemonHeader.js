@@ -1,29 +1,27 @@
 import './PokemonHeader.css';
 
-import { useState } from 'react';
-
 // importing components
 import Filter from './Filter';
 import SearchBar from './SearchBar';
 
 // menu component
-function Menu(){
+function Menu(props){
     return(
         <div className = 'flex items-center justify-around p-3'>
-            <SearchBar />
+            <SearchBar onSearch = { props.onSearch } />
             <Filter />
         </div>
     )
 }
 
 // pokemon header component
-function PokemonHeader(){
+function PokemonHeader(props){
     return(
         <div className = 'flex justify-center items-center my-4'>
             <div className = 'header p-4 rounded-md shadow-lg bg-white'>
                 <img className = 'mb-5' width = '30%' src = '/pokemonLogo.svg' alt = 'pokemon logo' />
 
-                <Menu />
+                <Menu onSearch = {props.onSearch} />
             </div>
         </div>    
     )
