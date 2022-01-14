@@ -1,9 +1,31 @@
-function SearchedPokemonList(props){
+import './SearchedPokemonCardsList.css';
+
+// importing components
+import PokemonCards from "./PokemonCards";
+
+
+function SearchedPokemonCardsList(props){
+    function cardsList(){
+        const list = props.pokemonList.map(pokemon => {
+            return <PokemonCards
+                key = {'pokemonid-' + pokemon.name}
+                name = {pokemon.name}
+                url = {pokemon.url}
+            />
+        })
+
+        return list;
+    }
+
     return(
-            props.list.map(pokemon => {
-                <h1>{ pokemon.name }</h1>
-            })
+        <div className = 'flex flex-col items-center justify-center my-5'>
+            <div className='pokemonCardsList rounded-md grid grid-cols-1 md:grid-cols-3'>
+                { 
+                    cardsList()
+                }
+            </div>
+        </div>    
     )
 }
 
-export default SearchedPokemonList;
+export default SearchedPokemonCardsList;

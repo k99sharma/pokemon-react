@@ -2,7 +2,7 @@
 import PokemonCardsList from "../components/PokemonCardsList";
 import GoToTop from "../components/TopButton";
 import PokemonHeader from "../components/PokemonHeader";
-import SearchedPokemonList from "../components/SearchedPokemonCardsList";
+import SearchedPokemonCardsList from "../components/SearchedPokemonCardsList";
 import { useState, useEffect } from "react";
 
 function SearchingTemplate(){
@@ -18,7 +18,6 @@ function Pokemon(){
 
     function searchPokemon(filteredList){
         setPokemonFilteredList(filteredList);
-        console.log(filteredList);
     }
 
     function isSearching(searchInput, buttonState){
@@ -41,7 +40,7 @@ function Pokemon(){
             { 
                 isSearched ? 
                      isSearchButton  ? 
-                        <SearchedPokemonList list = {pokemonFilteredList} />
+                        <SearchedPokemonCardsList pokemonList = {pokemonFilteredList} />
                             : 
                         <SearchingTemplate />
                     : 
