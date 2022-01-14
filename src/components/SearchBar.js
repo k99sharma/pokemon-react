@@ -36,8 +36,12 @@ function SearchBar(props){
     }
 
     useEffect(()=>{
-        props.onSearching(searchInput);
+        props.onSearching(searchInput, false);
     }, [searchInput])
+
+    useEffect(()=>{
+        props.onSearching(searchInput, true)
+    }, [filteredPokemonList])
 
     return(
         <>
