@@ -8,28 +8,28 @@ import { useState, useEffect } from "react";
 
 function Pokemon(){
     const [isSearched, setIsSearched] = useState(false);
+    const [searchText, setSearchText] = useState('');
     const [pokemonFilteredList, setPokemonFilteredList] = useState([]);
 
     function searchPokemon(filteredList){
-        if(filteredList.length > 0){
-            setPokemonFilteredList(filteredList);
-        }
-            
-        else{
-            setPokemonFilteredList([]);
-        }
-
+        setPokemonFilteredList(filteredList);
         console.log(filteredList);
     }
 
-    useEffect(()=>{
-        (pokemonFilteredList.length > 0 ? setIsSearched(true) : setIsSearched(false))
-    }, [pokemonFilteredList]);
+    function isSearching(searchInput){
+        if(searchInput.length > 0)
+            setIsSearched(true);
+        else
+            setIsSearched(false);
+    }
 
     return(
         <>
             <GoToTop />
-            <PokemonHeader onSearch = { searchPokemon } />
+            <PokemonHeader
+                onSearch = { searchPokemon } 
+                onSearching = { isSearching }    
+            />
             
             { 
                 isSearched ? 

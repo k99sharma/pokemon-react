@@ -22,16 +22,22 @@ function SearchBar(props){
         pokemonList.map(pokemon => {
             if(pokemon.name.length > searchInput.length){
                 const pokemonNameSubstring = pokemon.name.slice(0, searchInput.length);
-                // if(pokemonNameSubstring === searchInput)
-                //     console.log(pokemon);
                 if(pokemonNameSubstring === searchInput)
                     filteredResults.push(pokemon);
             }   
         });
 
         setFilteredPokemonList(filteredResults);
-        props.onSearch(filteredResults);
+        if(filteredResults.length > 0 && searchInput.length > 0){
+            props.onSearch(filteredResults);
+        }else{
+            props.onSearch(filteredResults);
+        }   
     }
+
+    useEffect(()=>{
+        props.onSearching(searchInput);
+    }, [searchInput])
 
     return(
         <>
