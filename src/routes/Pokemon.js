@@ -3,7 +3,7 @@ import PokemonCardsList from "../components/PokemonCardsList";
 import GoToTop from "../components/TopButton";
 import PokemonHeader from "../components/PokemonHeader";
 import SearchedPokemonCardsList from "../components/SearchedPokemonCardsList";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 function SearchingTemplate(){
     return(
