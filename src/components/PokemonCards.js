@@ -1,15 +1,30 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+
 import './PokemonCards.css';
 
 import { correctId } from '../utilities/functions';
-
+import Modal from './Modal';
 
 function PokemonCards(props){
     const [pokemonData, setPokemonData] = useState({
         id: 0,
+        name: '',
+        base_exp: 0,
+        height: 0,
+        weight: 0,
+        types: [],
         image_url: '',
     });
+
+    const [isOpen, setIsOpen] = useState(false);
+
+    function closeModal(){
+        setIsOpen(false);
+    }
+
+    function openModal(){
+        setIsOpen(true);
+    }
 
     useEffect(()=>{
         fetch(props.url)
@@ -17,14 +32,19 @@ function PokemonCards(props){
             .then(data => {
                 setPokemonData({
                     id: data.id,
+                    name: data.name,
+                    base_exp: data.base_experience,
+                    height: data.height,
+                    weight: data.weight,
+                    types: data.types,
                     image_url: data.sprites.front_default,
                 })
             });
     }, [])
 
     return(
-        <div className = 'cardContainer m-3 p-2'>
-            <Link to='#'>
+        <>
+            <div onClick={openModal} className = 'cardContainer m-3 p-2'>
                 <div className = 'card rounded-md flex flex-col'>
                     <div className = 'card__image flex items-center justify-center'>
                         <img width="200px" height="200px" src = {pokemonData.image_url} alt = {props.name} />
@@ -38,9 +58,11 @@ function PokemonCards(props){
                             { props.name.toUpperCase() }
                         </div>
                     </div>      
-                </div>
-            </Link> 
-        </div>
+                </div> 
+            </div>
+
+            <Modal data = { pokemonData } isOpen = {isOpen} closeModal = { closeModal } />
+        </>
     );
 }
 
