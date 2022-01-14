@@ -4,19 +4,6 @@ import './PokemonHeader.css';
 import Filter from './Filter';
 import SearchBar from './SearchBar';
 
-// menu component
-function Menu(props){
-    return(
-        <div className = 'flex items-center justify-around p-3'>
-            <SearchBar 
-                onSearch = { props.onSearch } 
-                onSearching = { props.onSearching }
-            />
-            <Filter onFilter = { props.onFilter } />
-        </div>
-    )
-}
-
 // pokemon header component
 function PokemonHeader(props){
     return(
@@ -24,11 +11,14 @@ function PokemonHeader(props){
             <div className = 'header p-4 rounded-md shadow-lg bg-white'>
                 <img className = 'mb-5' width = '30%' src = '/pokemonLogo.svg' alt = 'pokemon logo' />
 
-                <Menu 
-                    onSearch = {props.onSearch} 
-                    onSearching = {props.onSearching}
-                    onFilter = { props.onFilter }
-                />
+                <div className = 'flex items-center justify-around p-3'>
+                    <SearchBar 
+                        onSearch = { props.onSearch } 
+                        onSearching = { props.onSearching }
+                        fullPokemonList = { props.fullPokemonList }
+                    />
+                    <Filter onFilter = { props.onFilter } />
+                </div>
             </div>
         </div>    
     )

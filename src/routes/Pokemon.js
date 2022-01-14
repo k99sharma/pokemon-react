@@ -1,9 +1,11 @@
+import config_values from '../utilities/config';
+import { fetchPokemonsList } from '../utilities/functions';
 // importing Components
 import PokemonCardsList from "../components/PokemonCardsList";
 import GoToTop from "../components/TopButton";
 import PokemonHeader from "../components/PokemonHeader";
 import SearchedPokemonCardsList from "../components/SearchedPokemonCardsList";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function SearchingTemplate(){
     return(
@@ -16,6 +18,11 @@ function Pokemon(){
     const [isSearchButton, setIsSearchButton] = useState(false);
     const [filterValue, setFilterValue] = useState("none");
     const [pokemonFilteredList, setPokemonFilteredList] = useState([]);
+    const [fullPokemonList, setFullPokemonList] = useState([]);
+
+    useEffect(()=>{
+        fetchPokemonsList(config_values.POKEMON_API, config_values.TOTAL_NUMBER_OF_POKEMONS, setFullPokemonList);
+    }, [])
 
     function searchPokemon(filteredList){
         setPokemonFilteredList(filteredList);
@@ -41,6 +48,7 @@ function Pokemon(){
                 onSearch = { searchPokemon } 
                 onSearching = { isSearching }  
                 onFilter = { isFilterOn }
+                fullPokemonList = {fullPokemonList}
             />
             
             { 
@@ -55,6 +63,7 @@ function Pokemon(){
                     : 
                  <PokemonCardsList 
                     regionFilter = {filterValue}
+                    fullPokemonList = {fullPokemonList}
                  /> 
             }
         </>    

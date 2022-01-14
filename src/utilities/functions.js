@@ -38,7 +38,7 @@ module.exports.fetchPokemonsList=(API, count, setState)=>{
 }
 
 // function to check filter condition
-module.exports.checkFilter = (url, regions, selectedRegion)=>{
+module.exports.checkFilter = (url, regions, selectedRegion)=>{ 
     if(selectedRegion === 'none')
         return true;
 
