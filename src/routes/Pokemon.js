@@ -14,6 +14,7 @@ function SearchingTemplate(){
 function Pokemon(){
     const [isSearched, setIsSearched] = useState(false);
     const [isSearchButton, setIsSearchButton] = useState(false);
+    const [filterValue, setFilterValue] = useState("none");
     const [pokemonFilteredList, setPokemonFilteredList] = useState([]);
 
     function searchPokemon(filteredList){
@@ -29,22 +30,32 @@ function Pokemon(){
         setIsSearchButton(buttonState);
     }
 
+    function isFilterOn(value){
+        setFilterValue(value);
+    }
+
     return(
         <>
             <GoToTop />
             <PokemonHeader
                 onSearch = { searchPokemon } 
-                onSearching = { isSearching }    
+                onSearching = { isSearching }  
+                onFilter = { isFilterOn }
             />
             
             { 
                 isSearched ? 
                      isSearchButton  ? 
-                        <SearchedPokemonCardsList pokemonList = {pokemonFilteredList} />
+                        <SearchedPokemonCardsList 
+                            pokemonList = {pokemonFilteredList}
+                            regionFilter = {filterValue}
+                        />
                             : 
                         <SearchingTemplate />
                     : 
-                 <PokemonCardsList /> 
+                 <PokemonCardsList 
+                    regionFilter = {filterValue}
+                 /> 
             }
         </>    
     );

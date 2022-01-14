@@ -2,14 +2,14 @@ import { useEffect, useState } from 'react';
 import './PokemonCardsList.css';
 
 import config_values from '../utilities/config';
-import { fetchPokemonsList } from '../utilities/functions';
+import { fetchPokemonsList, checkFilter } from '../utilities/functions';
 
 // importing components
 import PokemonCards from './PokemonCards';
 import LoadingButton from './LoadingButton';
 
 
-function PokemonCardsList(){
+function PokemonCardsList(props){
     const [pokemonCount, setPokemonCount] = useState(config_values.POKEMON_COUNT);
     const [pokemonList, setPokemonList] = useState([]);
     const [isLoading, setIsLoding] = useState(false);
@@ -21,11 +21,13 @@ function PokemonCardsList(){
     // function to create pokemoncards component list
     function cardsList(){
         const list = pokemonList.map(pokemon => {
-            return <PokemonCards
-                key = {'pokemonid-' + pokemon.name}
-                name = {pokemon.name}
-                url = {pokemon.url}
-            />
+            if(checkFilter(pokemon.url, config_values.REGIONS, props.regionFilter)){
+                return <PokemonCards
+                    key = {'pokemonid-' + pokemon.name}
+                    name = {pokemon.name}
+                    url = {pokemon.url}
+                />
+            }
         })
 
         return list;

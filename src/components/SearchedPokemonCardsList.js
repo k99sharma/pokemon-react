@@ -1,17 +1,44 @@
 import './SearchedPokemonCardsList.css';
+import config_values from '../utilities/config';
 
 // importing components
 import PokemonCards from "./PokemonCards";
 
 
 function SearchedPokemonCardsList(props){
+    function findIdUsingURL(url){
+        const id = url.substring(34, url.length-1);
+        return parseInt(id);
+    }
+
+    function checkFilter(pokemon){
+        if(props.regionFilter === 'none')
+            return true;
+
+        const id = findIdUsingURL(pokemon.url);
+        for(let region in config_values.REGIONS){
+            const regionName = config_values.REGIONS[region].name;
+            if(regionName === props.regionFilter){
+                const start = config_values.REGIONS[region].startId;
+                const end = config_values.REGIONS[region].endId;
+
+                if(id >= start && id <= end)
+                    return true;
+                else
+                    return false;
+            }
+        }
+    }
+
     function cardsList(){
         const list = props.pokemonList.map(pokemon => {
-            return <PokemonCards
-                key = {'pokemonid-' + pokemon.name}
-                name = {pokemon.name}
-                url = {pokemon.url}
-            />
+            if(checkFilter(pokemon)){
+                return <PokemonCards
+                    key = {'pokemonid-' + pokemon.name}
+                    name = {pokemon.name}
+                    url = {pokemon.url}
+                />
+            }
         })
 
         return list;

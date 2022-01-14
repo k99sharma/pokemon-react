@@ -12,7 +12,7 @@ function Menu(props){
                 onSearch = { props.onSearch } 
                 onSearching = { props.onSearching }
             />
-            <Filter />
+            <Filter onFilter = { props.onFilter } />
         </div>
     )
 }
@@ -27,6 +27,7 @@ function PokemonHeader(props){
                 <Menu 
                     onSearch = {props.onSearch} 
                     onSearching = {props.onSearching}
+                    onFilter = { props.onFilter }
                 />
             </div>
         </div>    

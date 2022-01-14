@@ -36,3 +36,23 @@ module.exports.fetchPokemonsList=(API, count, setState)=>{
         .then(res => res.json())
         .then(data => setState(data.results))
 }
+
+// function to check filter condition
+module.exports.checkFilter = (url, regions, selectedRegion)=>{
+    if(selectedRegion === 'none')
+        return true;
+
+    const id = parseInt(url.substring(34, url.length-1));
+    for(let region in regions){
+        const regionName = regions[region].name;
+        if(regionName === selectedRegion){
+            const start = regions[region].startId;
+            const end = regions[region].endId;
+
+            if(id >= start && id <= end)
+                return true;
+            else
+                return false;
+        }
+    }
+}
