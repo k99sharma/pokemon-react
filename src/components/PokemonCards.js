@@ -13,7 +13,13 @@ function PokemonCards(props){
         height: 0,
         weight: 0,
         types: [],
-        image_url: '',
+        image_url: {
+            svg_url: '',
+            sprite: {
+                front: '',
+                back: ''
+            }
+        },
     });
 
     const [isOpen, setIsOpen] = useState(false);
@@ -37,7 +43,13 @@ function PokemonCards(props){
                     height: data.height,
                     weight: data.weight,
                     types: data.types,
-                    image_url: data.sprites.front_default,
+                    image_url: {
+                        svg_url: (data.id < 650) ? `/svg/${data.id}.svg` : data.sprites.front_default,
+                        sprite: {
+                            front: data.sprites.front_default,
+                            back: data.sprites.back_default,
+                        }
+                    },
                 })
             });
     }, [])
@@ -47,7 +59,7 @@ function PokemonCards(props){
             <div onClick={openModal} className = 'cardContainer m-3 p-2'>
                 <div className = 'card rounded-md flex flex-col'>
                     <div className = 'card__image flex items-center justify-center'>
-                        <img width="200px" height="200px" src = {pokemonData.image_url} alt = {props.name} />
+                        <img width="200px" height="200px" src = {pokemonData.image_url.sprite.front} alt = {props.name} />
                     </div>
 
                     <div className = 'card__description'>

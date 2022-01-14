@@ -53,10 +53,8 @@ function Modal(props){
 
                                 <div className="mt-2 flex flex-col items-center justify-center">
                                     <div className = 'modal-img'>
-                                        <img height = "300px" width = "300px" src = { props.data.image_url} alt = { props.data.name } />
+                                        <img height = "200px" width = "200px" src = { props.data.image_url.svg_url } alt = { props.data.name } />
                                     </div>
-
-                                    
                                 </div>
 
                                 {/* close button for modal */}
