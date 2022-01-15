@@ -1,15 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-
 .homeBox{
-    width: 70vw;
-}
-
-.content__content{
-    margin-top: 60px;
-}
-
-.content__text{
-    font-size: 28px;
-    color: white;
-    font-family: 'Bebas Neue', cursive;
+    min-width: 40vw;
+    min-height: 80vh;
 }
