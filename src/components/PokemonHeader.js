@@ -17,11 +17,11 @@ function Heading(){
 // pokemon header component
 function PokemonHeader(props){
     return(
-        <div className = 'header__wrapper flex justify-center items-center select-none'>
-            <div className = 'header p-4 rounded-md shadow-lg bg-white'>
+        <div className = 'header__wrapper flex justify-center items-center select-none mt-5'>
+            <div className = 'header p-4 rounded-xl shadow-lg'>
                 <Heading />
 
-                <div className = 'menu flex flex-col md:flex-row'>
+                <div className = 'menu flex flex-col md:flex-row md:justify-between md:px-5'>
                     <SearchBar 
                         onSearch = { props.onSearch } 
                         onSearching = { props.onSearching }

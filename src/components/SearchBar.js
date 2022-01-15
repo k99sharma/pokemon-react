@@ -1,5 +1,3 @@
-import './SearchBar.css';
-
 import { useState, useEffect } from 'react';
 
 function SearchBar(props){
@@ -34,8 +32,8 @@ function SearchBar(props){
     }, [filteredPokemonList])
 
     return(
-        <div className = 'searchBar flex grow justify-around my-5'>
-            <div className = 'searchBar__input w-8/12 border-2 border-transparent hover:border-blue-600 rounded-md'>
+        <div className = 'searchBar flex my-4'>
+            <div className = 'searchBar__input w-80 border-2 border-blue-600 rounded-md mr-5'>
                 <input 
                     className = 'p-2 rounded-md w-full outline-none' 
                     type = 'text' 
@@ -45,13 +43,14 @@ function SearchBar(props){
                 />
             </div>
 
-            <button onClick = { filterSearch } className = 'searchBar__button flex justify-around md:w-2/12 font-medium bg-blue-100 hover:bg-blue-200 text-blue-600 border-2 border-transparent hover:border-blue-600 p-2 rounded-md shadow-md'>
-                <span className = 'hidden md:block'>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <button onClick = { filterSearch } className = 'searchBar__button flex grow-none font-medium bg-blue-100 hover:bg-blue-300 text-blue-600 p-2 rounded-md hover:shadow-lg'>
+                <span className = 'flex items-center'>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
-                </span>
                     Search
+                </span>
+                    
             </button>
         </div>
     )

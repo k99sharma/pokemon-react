@@ -34,7 +34,7 @@ function GoButton(){
 
 function HomeBox(){
     return(
-        <div className = 'homeBox bg-yellow-300 rounded-xl select-none shadow-xl grid grid-cols-1 p-3'>
+        <div className = 'homeBox rounded-xl select-none shadow-xl grid grid-cols-1 p-3'>
             <Heading />
 
             <Illustration />
