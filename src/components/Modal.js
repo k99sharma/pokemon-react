@@ -1,8 +1,6 @@
 import { Fragment } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 
-import { useEffect, useState } from 'react';
-
 import config_values from '../utilities/config';
 
 function Modal(props){
@@ -95,7 +93,6 @@ function Modal(props){
                                         }
                                     </div>
                                 </div>
-                                
 
                                 {/* close button for modal */}
                                 <div className="mt-4 p-2">

@@ -3,6 +3,9 @@ import { useState, useEffect } from 'react';
 import './PokemonCards.css';
 
 import { correctId } from '../utilities/functions';
+import config_values from '../utilities/config';
+
+// importing components
 import Modal from './Modal';
 
 function PokemonCards(props){
