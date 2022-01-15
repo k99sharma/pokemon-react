@@ -8,7 +8,7 @@ function Pikachu(){
 function GoButton(){
     return(
         <Link to='/pokemon'>
-            <button className='exploreButton flex items-center justify-center hover:bg-amber-500 shadow-xl'>
+            <button className='inline-flex justify-center text-amber-600 font-medium bg-amber-100 p-3 rounded-md w-28 hover:bg-amber-200 hover:shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-amber-600'>
                 Explore
             </button>
         </Link>
@@ -43,7 +43,7 @@ function Content(){
 
 function HomeBox(){
     return(
-        <div className = 'homeBox grid grid-cols-1 shadow-lg md:grid-cols-2'>
+        <div className = 'homeBox rounded-md select-none grid grid-cols-1 shadow-lg md:grid-cols-2'>
             <div className = 'p-5'>
                 <Content />    
             </div>
