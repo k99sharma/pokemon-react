@@ -1,5 +1,6 @@
 import config_values from '../utilities/config';
 import { fetchPokemonsList } from '../utilities/functions';
+
 // importing Components
 import PokemonCardsList from "../components/PokemonCardsList";
 import GoToTop from "../components/TopButton";

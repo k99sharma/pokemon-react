@@ -1,5 +1,6 @@
 import './HomeBox.css';
 import { Link } from 'react-router-dom';
+import Footer from './Footer';
 
 function Illustration(){
     return(
@@ -40,6 +41,8 @@ function HomeBox(){
             <Illustration />
 
             <GoButton /> 
+
+            <Footer />
         </div>
     );
 }

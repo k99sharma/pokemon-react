@@ -1,5 +1,3 @@
-import './SearchingTemplate.css';
-
 function SearchingTemplate(){
     return(
         <div className = 'flex justify-center'>
