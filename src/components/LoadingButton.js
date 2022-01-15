@@ -10,7 +10,7 @@ function Spinner(){
 
 function LoadButton(props){
     return(
-        <button onClick={ props.load } className = 'loadMoreButton bg-amber-400 hover:bg-amber-500 rounded-md p-3 text-white'>
+        <button onClick={ props.load } className = 'bg-amber-400 p-3 rounded-lg font-medium shadow-lg'>
             Load More
         </button>
     )
