@@ -6,19 +6,6 @@ import { useEffect, useState } from 'react';
 import config_values from '../utilities/config';
 
 function Modal(props){
-    const [pokemonTypes, setPokemonTypes] = useState([]);
-
-    function findType(){
-        const types = [];
-        Object.keys(props.data.types).forEach(key => {
-            types.push(props.data.types[key].type.name);
-        })
-
-        setPokemonTypes(types);
-    }
-
-    useEffect(()=>{ findType() }, [pokemonTypes])
-
     return(
         <>
             <Transition appear show = {props.isOpen} as={Fragment}>
@@ -97,7 +84,7 @@ function Modal(props){
 
                                     <div className = 'flex'>
                                         {
-                                            pokemonTypes.map(type => {
+                                            props.data.types.map(type => {
                                                return <div
                                                     className = { "mr-2 py-1 px-2 rounded-md text-white " + config_values.TYPE_COLORS[type] }
                                                     key = { type + " " + props.data.id }

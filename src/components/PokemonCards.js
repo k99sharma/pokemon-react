@@ -12,7 +12,7 @@ function PokemonCards(props){
         base_exp: 0,
         height: 0,
         weight: 0,
-        types: {},
+        types: [],
         image_url: {
             svg_url: '',
             sprite: {
@@ -32,6 +32,16 @@ function PokemonCards(props){
         setIsOpen(true);
     }
 
+    function findPokemonType(types){
+        const types_arr = [];
+
+        types.map(type => {
+            types_arr.push(type.type.name);
+        })
+        
+        return types_arr;
+    }
+
     useEffect(()=>{
         fetch(props.url)
             .then(res => res.json())
@@ -42,7 +52,7 @@ function PokemonCards(props){
                     base_exp: data.base_experience,
                     height: data.height,
                     weight: data.weight,
-                    types: data.types,
+                    types: findPokemonType(data.types),
                     image_url: {
                         svg_url: (data.id < 650) ? `/svg/${data.id}.svg` : data.sprites.front_default,
                         sprite: {
