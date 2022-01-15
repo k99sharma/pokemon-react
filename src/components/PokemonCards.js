@@ -57,7 +57,7 @@ function PokemonCards(props){
     return(
         <>
             <div onClick={openModal} className = 'cardContainer m-3 p-2'>
-                <div className = 'card rounded-lg flex flex-col'>
+                <div className = 'card cursor-pointer rounded-lg flex flex-col'>
                     <div className = 'card__image bg-blue-100 flex items-center justify-center'>
                         <img width="200px" height="200px" src = {pokemonData.image_url.sprite.front} alt = {props.name} />
                     </div>
