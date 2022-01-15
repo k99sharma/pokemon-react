@@ -44,7 +44,7 @@ function SearchBar(props){
             </div>
 
             <button onClick = { filterSearch } className = 'searchBar__button flex grow-none font-medium bg-blue-100 hover:bg-blue-300 text-blue-600 p-2 rounded-md shadow-lg'>
-                <span className = 'flex items-center'>
+                <span className = 'flex items-center md:mx-2'>
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>

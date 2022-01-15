@@ -44,7 +44,26 @@ const config_values = {
         },     
     ],
     REGIONS_IDX: ["Kanto", "Johto", "Hoenn", "Sinnoh", "Unova", "Kalos"],
-    
+    TYPE_COLORS: {
+        normal: "white",
+        fire: "red",
+        water: "blue",
+        grass: "green",
+        electric: "yellow",
+        ice: "white",
+        fighting: "brown",
+        poison: "purple",
+        ground: "yellow",
+        flying: "cyan",
+        psychic: "purple",
+        bug: "green",
+        rock: "brown",
+        ghost: "blue",
+        dragon: "blue",
+        dark: "black",
+        steel: "grey",
+        fairy: "pink"
+    }
 }
 
 export default config_values;

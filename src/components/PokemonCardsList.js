@@ -61,7 +61,7 @@ function PokemonCardsList(props){
     }
 
     return(
-        <div className = 'flex flex-col items-center justify-center my-5'>
+        <div className = 'flex flex-col items-center justify-center my-5 select-none'>
             <div className='pokemonCardsList rounded-md grid grid-cols-1 md:grid-cols-3'>
                 { 
                     cardsList()

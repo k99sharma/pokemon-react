@@ -3,10 +3,6 @@
     transition: all ease-out 0.2s;
 }
 
-.card__image{
-    background-color: #Ecf3f9;
-}
-
 .card__subtitle{
     color: grey;
     font-weight: 600;
