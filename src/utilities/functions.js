@@ -37,6 +37,11 @@ module.exports.fetchPokemonsList=(API, count, setState)=>{
         .then(data => setState(data.results))
 }
 
+// function to get Id from url
+module.exports.getIdFromUrl = (url) => {
+    return parseInt(url.substring(34, url.length-1));
+}
+
 // function to check filter condition
 module.exports.checkFilter = (url, regions, selectedRegion)=>{ 
     if(selectedRegion === 'none')

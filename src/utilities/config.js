@@ -41,18 +41,10 @@ const config_values = {
             name: "Kalos",
             startId: 650,
             endId: 721,
-        },
-        // {
-        //     id: 7,
-        //     name: "Alola",
-        //     startId: 722,
-        //     endId: 
-        // },
-        // {
-        //     id: 8,
-        //     name: "Galar",
-        // },        
-    ]
+        },     
+    ],
+    REGIONS_IDX: ["Kanto", "Johto", "Hoenn", "Sinnoh", "Unova", "Kalos"],
+    
 }
 
 export default config_values;
