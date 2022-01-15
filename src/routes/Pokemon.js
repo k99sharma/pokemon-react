@@ -5,13 +5,11 @@ import PokemonCardsList from "../components/PokemonCardsList";
 import GoToTop from "../components/TopButton";
 import PokemonHeader from "../components/PokemonHeader";
 import SearchedPokemonCardsList from "../components/SearchedPokemonCardsList";
+import SearchingTemplate from '../components/SearchingTemplate';
+
 import { useState, useEffect } from "react";
 
-function SearchingTemplate(){
-    return(
-        <h1>Hii</h1>
-    )
-}
+
 
 function Pokemon(){
     const [isSearched, setIsSearched] = useState(false);
