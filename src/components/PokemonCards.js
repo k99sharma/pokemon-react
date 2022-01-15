@@ -12,7 +12,7 @@ function PokemonCards(props){
         base_exp: 0,
         height: 0,
         weight: 0,
-        types: [],
+        types: {},
         image_url: {
             svg_url: '',
             sprite: {
