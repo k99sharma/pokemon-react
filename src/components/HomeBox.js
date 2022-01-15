@@ -21,7 +21,7 @@ function GoButton(){
     return(
         <div className = 'content__button flex items-center justify-center my-3'>
             <Link to='/pokemon'>
-                <button className='inline-flex items-center  text-blue-800 font-medium bg-blue-100 p-3 rounded-md border-4 border-transparent hover:border-blue-800 hover:bg-blue-200 hover:shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-600'>
+                <button className='inline-flex items-center  text-blue-800 font-medium bg-blue-100 p-3 rounded-md border-2 border-transparent hover:border-blue-800 hover:bg-blue-200 hover:shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-600'>
                     <span>
                         <img className = 'mr-3' width = "30px" height = "30px" src = '/pokeball.png' alt = 'pokeball' />
                     </span>
