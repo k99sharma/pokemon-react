@@ -5,8 +5,7 @@ import './Navbar.css';
 function Banner(){
     return(
         <div className = 'banner flex ml-3'>
-            <img className = 'mr-2 shadow-lg' width="30px" height="30px" src='/logo.png' alt="pokeball image" />
-            Pokemon
+            <img className = 'mr-2' width="40px" height="40px" src='/logo.png' alt="pokeball image" />
         </div>
     );
 }
