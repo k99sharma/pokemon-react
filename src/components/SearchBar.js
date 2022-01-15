@@ -34,18 +34,26 @@ function SearchBar(props){
     }, [filteredPokemonList])
 
     return(
-        <>
-            <div className = 'searchBar shadow-md'>
+        <div className = 'searchBar flex grow justify-around my-5'>
+            <div className = 'searchBar__input w-8/12 border-2 border-transparent hover:border-blue-600 rounded-md'>
                 <input 
-                    className = 'searchBar__input p-2 rounded-md' 
+                    className = 'p-2 rounded-md w-full outline-none' 
                     type = 'text' 
                     placeholder = 'Enter Pokemon Name'
                     onChange = { e =>  setSearchInput(e.target.value.toLowerCase().trim()) }
                     value = { searchInput }
                 />
             </div>
-            <button onClick = { filterSearch } className = 'searchButton p-2 rounded-md shadow-md'>Search</button>
-        </>
+
+            <button onClick = { filterSearch } className = 'searchBar__button flex justify-around md:w-2/12 font-medium bg-blue-100 hover:bg-blue-200 text-blue-600 border-2 border-transparent hover:border-blue-600 p-2 rounded-md shadow-md'>
+                <span className = 'hidden md:block'>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </span>
+                    Search
+            </button>
+        </div>
     )
 }
 
