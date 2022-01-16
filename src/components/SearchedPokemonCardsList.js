@@ -30,18 +30,31 @@ function SearchedPokemonCardsList(props){
         }
     }
 
-    function cardsList(){
-        const list = props.pokemonList.map(pokemon => {
-            if(checkFilter(pokemon)){
-                return <PokemonCards
-                    key = {'pokemonid-' + pokemon.name}
-                    name = {pokemon.name}
-                    url = {pokemon.url}
-                />
-            }
-        })
+    function NotFound(){
+        return(
+            <div className = 'bg-amber-400 p-2'>
+                Not Found
+            </div>
+        );
+    }
 
-        return list;
+    function cardsList(){
+        if(props.pokemonList.length === 0)
+            alert("Not Found");
+
+        else{
+            const list = props.pokemonList.map(pokemon => {
+                if(checkFilter(pokemon)){
+                    return <PokemonCards
+                        key = {'pokemonid-' + pokemon.name}
+                        name = {pokemon.name}
+                        url = {pokemon.url}
+                    />
+                }
+            })
+    
+            return list;
+        }   
     }
 
     return(
