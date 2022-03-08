@@ -2,7 +2,7 @@
 # Pokemon Application
 
 
-### It is a learning project created using `React`, `Tailwind` and `Pokemon API`
+### It is a project created using `React`, `Tailwind` and `Pokemon API`
 
 ![Screenshot (57)](https://user-images.githubusercontent.com/54969439/149664772-a1f7ee30-1da4-46d9-8fb8-c81a4f8910c6.png)
 
