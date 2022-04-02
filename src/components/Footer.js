@@ -2,7 +2,7 @@ function Footer(){
     return(
         <div className = 'footer flex justify-center my-3'>
             <div className = 'flex justify-around'>
-                <a href = "https://www.kalashsharma.me/" target = "_blank">
+                <a href = "https://www.kalashsharma.com/" target = "_blank">
                     <img className = "mx-2" width = "28px" height = "28px" src = '/web.png' alt = 'website' />
                 </a>
 
