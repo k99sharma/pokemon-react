@@ -16,7 +16,7 @@
 
 
 <p align='center'>
-  Pokedex is a web application created using ReactJs, it displays pokemons in the form of grid of cards. It also includes searching and filtering features.
+  ⛵ Pokedex is a web application created using ReactJs, it displays pokemons in the form of grid of cards. It also includes searching and filtering features.
 </p>
 
 ![Screenshot (57)](https://user-images.githubusercontent.com/54969439/149664772-a1f7ee30-1da4-46d9-8fb8-c81a4f8910c6.png)
